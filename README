@@ -1,4 +1,11 @@
-mv ~/.vim ~/.vim.old && mkdir -p ~/.vim/bundle/
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# backup old .vim directory and clone clneagu/.vim
+mv ~/.vim ~/.vim.old && git clone https://github.com/clneagu/.vim
+
+# clone vundle management plugin
+mkdir -p ~/.vim/bundle/ && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+# install all the plugins via vundle
 vim -u ~/.vim/bundles.vim +BundleInstall +q
+
+# create symlink to the new .vimrc file
 ln -s ~/.vim/.vimrc ~/.vimrc
