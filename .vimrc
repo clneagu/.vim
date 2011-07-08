@@ -70,7 +70,9 @@ inoremap <F2> <ESC>:w<CR>
 vnoremap <F2> <ESC>:w<CR>
 
 " highlight text over line length
-set colorcolumn=81
+if exists("&colorcolumn")
+    set colorcolumn=81
+endif
 hi ColorColumn ctermbg=darkred guibg=#592929
 
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
