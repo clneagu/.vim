@@ -3,7 +3,7 @@ cd && mv .vim .vim.`date +%F:%T`
 
 # Clone new .vim [Read/Write vs. Read Only]
 git clone git@github.com:clneagu/.vim
-git clone git://github.com/clneagu/.vim.git
+git clone git://github.com/clneagu/.vim
 
 # clone vundle management plugin
 mkdir -p ~/.vim/bundle/ && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
