@@ -1,5 +1,8 @@
-# backup old .vim directory and clone clneagu/.vim
-cd && mv .vim .vim.old && git clone https://github.com/clneagu/.vim
+# Read/Write - backup old .vim directory and clone clneagu/.vim
+cd && mv .vim .vim.old && git clone git@github.com:clneagu/.vim
+
+# Read Only - backup old .vim directory and clone clneagu/.vim
+cd && mv .vim .vim.old && git clone git://github.com/clneagu/.vim.git
 
 # clone vundle management plugin
 mkdir -p ~/.vim/bundle/ && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
