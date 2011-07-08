@@ -1,10 +1,8 @@
 # Backup old .vim
 cd && mv .vim .vim.`date +%F:%T`
 
-# Read/Write
+# Clone new .vim [Read/Write vs. Read Only]
 git clone git@github.com:clneagu/.vim
-
-# Read Only
 git clone git://github.com/clneagu/.vim.git
 
 # clone vundle management plugin
