@@ -1,5 +1,4 @@
 source ~/.vim/bundles.vim
-"set statusline=+'%<\ %f\ %{fugitive#statusline()}'
 
 colorscheme wombat
 "set viminfo='100,f1,<50,s10,h,%
