@@ -3,6 +3,8 @@ source ~/.vim/bundles.vim
 colorscheme wombat
 "set viminfo='100,f1,<50,s10,h,%
 set viminfo='1000,f1,<500
+set cursorcolumn
+set cursorline
 
 " buffer handling
 set hidden
