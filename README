@@ -1,3 +1,5 @@
+# Vim Docs: http://vim.dev.ro
+
 # Backup old .vim
 cd && mv .vim .vim.`date +%F:%T`
 
