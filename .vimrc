@@ -1,6 +1,15 @@
 source ~/.vim/bundles.vim
 
-colorscheme wombat
+if has('gui_running')
+    "set background=light
+    set background=dark
+    colorscheme solarized
+    set guioptions=
+else
+    set background=dark
+    colorscheme wombat
+endif
+
 
 "set viminfo='100,f1,<50,s10,h,%
 set viminfo='1000,f1,<500
