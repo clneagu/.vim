@@ -9,7 +9,6 @@ Bundle 'gmarik/vundle'
 
 " repos on github
 Bundle 'L9'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'motemen/git-vim'
 Bundle 'mhz/html5.vim'
@@ -30,8 +29,12 @@ Bundle 'gmarik/vim-markdown'
 Bundle 'vim-scripts/FuzzyFinder'
 "Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'ervandew/supertab'
-"Bundle 'buftabs'
 Bundle 'vim-scripts/buftabs'
+Bundle 'superjudge/tasklist-pathogen'
+"Bundle 'drmingdrmer/xptemplate'
+"Bundle 'vim-scripts/UltiSnips'
+Bundle 'rygwdn/ultisnips'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on     " required! 
 " :BundleInstall  - install bundles (won't update installed)

@@ -1,6 +1,7 @@
 source ~/.vim/bundles.vim
 
 colorscheme wombat
+
 "set viminfo='100,f1,<50,s10,h,%
 set viminfo='1000,f1,<500
 set cursorcolumn
@@ -86,9 +87,9 @@ set number
 nnoremap <F12> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 " revision controll
-noremap <F3> :call Svndiff("prev")<CR>
-noremap <F4> :call Svndiff("next")<CR>
-noremap <F5> :call Svndiff("clear")<CR> 
+"noremap <F3> :call Svndiff("prev")<CR>
+"noremap <F4> :call Svndiff("next")<CR>
+"noremap <F5> :call Svndiff("clear")<CR> 
 
 " Turn on smart indent
 set smartindent     " it may brake Eric Mc Sween's indent fix
@@ -141,12 +142,22 @@ if has("autocmd")
     autocmd BufWinEnter ?* silent loadview
 endif
 
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-"http://vim.wikia.com/wiki/In_line_copy_and_paste_to_system_clipboard
+" Tabb for omnicompletion
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+map <C-F6> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+"http://vim.wikia.com/wiki/In_line_copy_and_paste_to_system_clipbo
+"ard
 "sudo apt-get install xclip
 "vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 "nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
