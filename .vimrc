@@ -16,9 +16,6 @@ else
     endif
 endif
 
-
-
-
 "set viminfo='100,f1,<50,s10,h,%
 set viminfo='1000,f1,<500
 set cursorcolumn
@@ -98,7 +95,12 @@ vnoremap <F2> <ESC>:w<CR>
 if exists("&colorcolumn")
     set colorcolumn=81
 endif
-hi ColorColumn ctermbg=darkred guibg=#592929
+hi ColorColumn ctermbg=black guibg=#292929
+
+hi default ShowMarksHLl ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
+hi default ShowMarksHLu ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
+hi default ShowMarksHLo ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
+hi default ShowMarksHLm ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 
 highlight OverLength ctermbg=NONE ctermfg=white guibg=#592929 
 match OverLength /\%>81v.\+/
