@@ -81,7 +81,12 @@ set hlsearch
 set incsearch " ...dynamically as they are typed.
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 
-set listchars=tab:>-,trail:·,eol:$
+if version < 730
+    set listchars=tab:>-,trail:-
+else
+    set listchars=tab:>-,trail:·,eol:$
+endif
+
 nmap <silent> <leader>s :set nolist!<CR>
 
 " save shortcut
