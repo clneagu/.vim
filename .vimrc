@@ -1,14 +1,22 @@
 source ~/.vim/bundles.vim
 
 if has('gui_running')
-    "set background=light
-    set background=dark
+    set background=light
     colorscheme solarized
     set guioptions=
 else
-    set background=dark
-    colorscheme wombat
+    " Set up pretty colors
+    if &term ==? "xterm-256color" || &term ==? "screen-256color-bce"
+        set t_Co=256
+        colorscheme typofree
+        "colorscheme wombat
+        set background=dark
+    else
+        colorscheme default
+    endif
 endif
+
+
 
 
 "set viminfo='100,f1,<50,s10,h,%
@@ -54,7 +62,7 @@ set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{GitBranch()}
 set history=200
 
 " Case-smart searching
-set ignorecase 
+set ignorecase
 set smartcase
 
 " Intuitive backspacing in insert mode
@@ -87,7 +95,7 @@ if exists("&colorcolumn")
 endif
 hi ColorColumn ctermbg=darkred guibg=#592929
 
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
+highlight OverLength ctermbg=NONE ctermfg=white guibg=#592929 
 match OverLength /\%>81v.\+/
 
 " Turn on line numbers
@@ -98,7 +106,7 @@ nnoremap <F12> :set nonumber!<CR>:set foldcolumn=0<CR>
 " revision controll
 "noremap <F3> :call Svndiff("prev")<CR>
 "noremap <F4> :call Svndiff("next")<CR>
-"noremap <F5> :call Svndiff("clear")<CR> 
+"noremap <F5> :call Svndiff("clear")<CR>
 
 " Turn on smart indent
 set smartindent     " it may brake Eric Mc Sween's indent fix
@@ -142,7 +150,7 @@ map <unique> <Leader>] :TlistToggle<CR>
 if exists(":let")
     " Make sure NERDTree always opens with the right dimensions
     let NERDTreeQuitOnOpen = 1
-    let NERDTreeWinSize = 30    
+    let NERDTreeWinSize = 30
 endif
 
 " Save folding status automatically
@@ -170,4 +178,6 @@ map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "sudo apt-get install xclip
 "vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 "nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 

@@ -27,6 +27,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'skammer/vim-css-color'
 Bundle 'gmarik/vim-markdown'
 Bundle 'vim-scripts/FuzzyFinder'
+Bundle 'vim-scripts/typofree.vim'
 "Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'ervandew/supertab'
 Bundle 'vim-scripts/buftabs'
@@ -35,6 +36,8 @@ Bundle 'superjudge/tasklist-pathogen'
 "Bundle 'vim-scripts/UltiSnips'
 Bundle 'rygwdn/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'jnurmine/Zenburn'
+"Bundle 'ir_black'
 
 filetype plugin indent on     " required! 
 " :BundleInstall  - install bundles (won't update installed)
