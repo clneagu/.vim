@@ -1,7 +1,6 @@
 # Vim Docs: http://vim.dev.ro
 
-# Backup old .vim
-cd && mv .vim .vim.`date +%F:%T`
+#ATTN:  Backup old .vim if you still need it
 
 # Clone new .vim [Read/Write vs. Read Only]
 git clone git@github.com:clneagu/.vim
@@ -16,5 +15,5 @@ vim -u ~/.vim/bundles.vim +BundleInstall +q
 # create symlink to the new .vimrc file
 ln -s ~/.vim/.vimrc ~/.vimrc
 
-# add to ~/.bashrc
+# add the following line to ~/.bashrc for 256 color terminal
 export TERM="xterm-256color"

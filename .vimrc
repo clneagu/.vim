@@ -102,7 +102,7 @@ hi default ShowMarksHLu ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=
 hi default ShowMarksHLo ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 hi default ShowMarksHLm ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 
-highlight OverLength ctermbg=NONE ctermfg=white guibg=#592929 
+highlight OverLength ctermbg=NONE ctermfg=white guibg=#592929
 match OverLength /\%>81v.\+/
 
 " Turn on line numbers
@@ -120,6 +120,7 @@ set smartindent     " it may brake Eric Mc Sween's indent fix
 set tabstop=4		" set tab character to 4 characters
 set shiftwidth=4	" indent width for autoindent
 set expandtab		" turn tabs into whitespace
+inoremap # X#     " fixes the comment indent forced to indent level 0
 
 " Vasiliev python syntax corection
 filetype plugin indent on
@@ -186,5 +187,6 @@ map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 "nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
+"remove non printable characters
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
