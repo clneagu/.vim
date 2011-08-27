@@ -43,6 +43,7 @@ Bundle 'rygwdn/ultisnips'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
 "Bundle 'ir_black'
+Bundle 'vim-scripts/AutoTag'
 
 filetype plugin indent on     " required! 
 " :BundleInstall  - install bundles (won't update installed)

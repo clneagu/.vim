@@ -190,3 +190,6 @@ map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "remove non printable characters
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
+" autogenerate ctags
+"autocmd BufWritePost .py,.cpp,*.h silent! !ctags -R &
+
