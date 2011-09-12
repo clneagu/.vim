@@ -12,7 +12,7 @@ Bundle 'L9'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'motemen/git-vim'
 Bundle 'mhz/html5.vim'
-"Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree.git'
 "Bundle 'scrooloose/snipmate-snippets'
 "Bundle 'robhudson/snipmate_for_django'
