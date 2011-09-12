@@ -1,9 +1,10 @@
 source ~/.vim/bundles.vim
 
 if has('gui_running')
-    set background=light
     colorscheme solarized
+    set background=light
     set guioptions=
+    hi ColorColumn ctermbg=white guibg=#d9d9d9
 else
     " Set up pretty colors
     if &term ==? "xterm-256color" || &term ==? "screen-256color-bce"
@@ -11,6 +12,7 @@ else
         colorscheme typofree
         "colorscheme wombat
         set background=dark
+        hi ColorColumn ctermbg=black guibg=#292929
     else
         colorscheme default
     endif
@@ -26,7 +28,7 @@ set hidden
 set wildchar=<Tab> wildmenu wildmode=full
 
 " define leader modifier
-let mapleader = ","
+"let mapleader = ","
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
@@ -95,15 +97,16 @@ vnoremap <F2> <ESC>:w<CR>
 if exists("&colorcolumn")
     set colorcolumn=81
 endif
-hi ColorColumn ctermbg=black guibg=#292929
 
 hi default ShowMarksHLl ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 hi default ShowMarksHLu ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 hi default ShowMarksHLo ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 hi default ShowMarksHLm ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 
-highlight OverLength ctermbg=NONE ctermfg=white guibg=#592929
+highlight OverLength ctermbg=NONE ctermfg=white guibg=NONE
 match OverLength /\%>81v.\+/
+
+set pastetoggle=<F8>
 
 " Turn on line numbers
 set number
@@ -178,8 +181,8 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " Tabb for omnicompletion
 "let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
-map <C-F6> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+"map <C-F6> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+"map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "http://vim.wikia.com/wiki/In_line_copy_and_paste_to_system_clipbo
 "ard
@@ -192,4 +195,23 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " autogenerate ctags
 "autocmd BufWritePost .py,.cpp,*.h silent! !ctags -R &
+
+map <leader>v <Plug>TaskList
+
+" Move entire line/block up and down
+nnoremap <silent> <C-j> :m+<CR>==
+nnoremap <silent> <C-k> :m-2<CR>==
+inoremap <silent> <C-j> <Esc>:m+<CR>==gi
+inoremap <silent> <C-k> <Esc>:m-2<CR>==gi
+vnoremap <silent> <C-j> :m'>+<CR>gv=gv
+vnoremap <silent> <C-k> :m-2<CR>gv=gv
+
+" cool autoindent in vim !?
+set cindent
+set smartindent
+set autoindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set cinkeys=0{,0},:,0#,!,!^F
 

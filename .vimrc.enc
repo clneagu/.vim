@@ -1,0 +1,5 @@
+source ~/.vimrc
+set cm=blowfish
+set nobackup
+set noswapfile
+set nowritebackup
