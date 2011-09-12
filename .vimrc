@@ -28,7 +28,7 @@ set hidden
 set wildchar=<Tab> wildmenu wildmode=full
 
 " define leader modifier
-let mapleader = ","
+"let mapleader = ","
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
