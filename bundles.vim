@@ -51,10 +51,10 @@ Bundle 'mru.vim'
 "Bundle 'vim-scripts/notes.vim'
 "Bundle 'xolox/vim-notes'
 "Bundle 'vim-scripts/Note-Maker'
-Bundle 'tomtom/tlib_vim'
-Bundle 'tomtom/viki_vim'
-Bundle 'vimoutliner/vimoutliner'
-Bundle 'mivok/vimtodo'
+"Bundle 'tomtom/tlib_vim'
+"Bundle 'tomtom/viki_vim'
+"Bundle 'vimoutliner/vimoutliner'
+"Bundle 'mivok/vimtodo'
 
 filetype plugin indent on     " required! 
 " :BundleInstall  - install bundles (won't update installed)
