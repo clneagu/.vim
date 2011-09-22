@@ -123,7 +123,9 @@ set smartindent     " it may brake Eric Mc Sween's indent fix
 set tabstop=4		" set tab character to 4 characters
 set shiftwidth=4	" indent width for autoindent
 set expandtab		" turn tabs into whitespace
-inoremap # X#     " fixes the comment indent forced to indent level 0
+
+" fixes the comment indent forced to indent level 0
+inoremap # X#
 
 " Vasiliev python syntax corection
 filetype plugin indent on
