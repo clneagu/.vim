@@ -10,7 +10,6 @@ else
     if &term ==? "xterm-256color" || &term ==? "screen-256color-bce"
         set t_Co=256
         colorscheme typofree
-        "colorscheme wombat
         set background=dark
         hi ColorColumn ctermbg=black guibg=#292929
     else
@@ -26,9 +25,6 @@ set cursorline
 " buffer handling
 set hidden
 set wildchar=<Tab> wildmenu wildmode=full
-
-" define leader modifier
-"let mapleader = ","
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
@@ -103,7 +99,7 @@ hi default ShowMarksHLu ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=
 hi default ShowMarksHLo ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 hi default ShowMarksHLm ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 
-highlight OverLength ctermbg=NONE ctermfg=white guibg=NONE
+highlight OverLength ctermbg=black ctermfg=NONE guibg=NONE
 match OverLength /\%>81v.\+/
 
 set pastetoggle=<F8>
@@ -208,12 +204,30 @@ inoremap <silent> <C-k> <Esc>:m-2<CR>==gi
 vnoremap <silent> <C-j> :m'>+<CR>gv=gv
 vnoremap <silent> <C-k> :m-2<CR>gv=gv
 
-" cool autoindent in vim !?
-set cindent
-set smartindent
-set autoindent
-set expandtab
-set cinkeys=0{,0},:,0#,!,!^F
-
 autocmd BufNewFile,BufReadPost *.md,*.mkd,*.markdown,*.mdown set filetype=markdown
+
+"let g:sparkupNextMapping = '<c-x>'
+"http://stevelosh.com/blog/2010/09/coming-home-to-vim/#some-background-about-me
+"kill the arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+nnoremap ; :
+au FocusLost * :wa
+"remove F1 for help
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" binging for tmux
+" map ;t :w\|:call Send_to_Tmux("\n\n\n(load-file \"./myfile.clj\")\n")<CR>
+
+"set directory=~/.vim/swap,.
 

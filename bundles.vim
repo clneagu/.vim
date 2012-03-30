@@ -36,7 +36,6 @@ Bundle 'vim-scripts/Obvious-Mode'
 "Bundle 'vim-scripts/css_color.vim'
 "Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'ervandew/supertab'
-Bundle 'vim-scripts/buftabs'
 Bundle 'superjudge/tasklist-pathogen'
 "Bundle 'drmingdrmer/xptemplate'
 "Bundle 'vim-scripts/UltiSnips'
@@ -51,11 +50,19 @@ Bundle 'mru.vim'
 "Bundle 'tomtom/tlib_vim'
 "Bundle 'tomtom/viki_vim'
 Bundle 'vim-scripts/vimwiki'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/buftabs'
+Bundle 'jgdavey/tslime.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 "Bundle 'vimoutliner/vimoutliner'
 "Bundle 'xolox/vim-notes'
 "Bundle 'vim-scripts/Note-Maker'
 "Bundle 'mivok/vimtodo'
+Bundle 'kchmck/vim-coffee-script'
+
+"Bundle 'rstacruz/sparkup'
+Bundle 'kogakure/vim-sparkup'
 
 filetype plugin indent on     " required! 
 " :BundleInstall  - install bundles (won't update installed)
