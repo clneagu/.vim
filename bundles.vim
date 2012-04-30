@@ -63,6 +63,7 @@ Bundle 'kchmck/vim-coffee-script'
 
 "Bundle 'rstacruz/sparkup'
 Bundle 'kogakure/vim-sparkup'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on     " required! 
 " :BundleInstall  - install bundles (won't update installed)
