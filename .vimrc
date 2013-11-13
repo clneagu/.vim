@@ -1,7 +1,8 @@
 source ~/.vim/bundles.vim
 
 if has('gui_running')
-    colorscheme solarized
+    colorscheme Tomorrow-Night-Eighties
+    "colorscheme solarized
     set background=light
     set guioptions=
     hi ColorColumn ctermbg=white guibg=#d9d9d9
@@ -9,6 +10,7 @@ else
     " Set up pretty colors
     if &term ==? "xterm-256color" || &term ==? "screen-256color-bce"
         set t_Co=256
+        " colorscheme base16-default
         colorscheme typofree
         set background=dark
         hi ColorColumn ctermbg=black guibg=#292929
@@ -90,19 +92,20 @@ inoremap <F2> <ESC>:w<CR>
 vnoremap <F2> <ESC>:w<CR>
 
 " highlight text over line length
-if exists("&colorcolumn")
-    set colorcolumn=81
-endif
+"if exists("&colorcolumn")
+"    set colorcolumn=72
+"endif
 
 hi default ShowMarksHLl ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 hi default ShowMarksHLu ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 hi default ShowMarksHLo ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 hi default ShowMarksHLm ctermfg=black ctermbg=NONE cterm=bold guifg=black guibg=NONE gui=bold
 
-highlight OverLength ctermbg=black ctermfg=NONE guibg=NONE
-match OverLength /\%>81v.\+/
+"highlight OverLength ctermbg=black ctermfg=NONE guibg=NONE
+"match OverLength /\%>72v.\+/
 
 set pastetoggle=<F8>
+nmap \o :set paste!<CR>
 
 " Turn on line numbers
 set number
@@ -153,8 +156,8 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 " Nerdtree & taglist
-map <unique> <Leader>[ :NERDTreeToggle<CR>
-map <unique> <Leader>] :TlistToggle<CR>
+" map <unique> <Leader>[ :NERDTreeToggle<CR>
+" map <unique> <Leader>] :TlistToggle<CR>
 
 if exists(":let")
     " Make sure NERDTree always opens with the right dimensions
@@ -225,9 +228,15 @@ au FocusLost * :wa
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap - :Switch<cr>
+
+" noremap h <NOP>
+" noremap j <NOP>
+" noremap k <NOP>
+" noremap l <NOP>
 
 " binging for tmux
 " map ;t :w\|:call Send_to_Tmux("\n\n\n(load-file \"./myfile.clj\")\n")<CR>
 
 "set directory=~/.vim/swap,.
-
