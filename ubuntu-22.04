@@ -9,3 +9,73 @@ sudo ufw status
 
 # Gnome Tweaks
 sudo apt install -y gnome-tweaks
+
+# chrome
+wget [https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
+sudo apt install ./google-chrome-stable_current_amd64.deb
+sudo apt install -y chrome-gnome-shell
+
+# brave
+sudo apt install apt-transport-https curl -y
+curl -s [https://brave-browser-apt-release.s3.brave.com/brave-core.asc](https://brave-browser-apt-release.s3.brave.com/brave-core.asc) | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] [https://brave-browser-apt-release.s3.brave.com/](https://brave-browser-apt-release.s3.brave.com/) stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser -y
+
+
+
+
+# ########## USER settings
+
+# --------- configure GUI using CLI
+
+# Disable animations
+gsettings set org.gnome.desktop.interface enable-animations false
+
+# hide ubuntu dock
+gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
+
+# disable Super (Super + s still works)
+gsettings set org.gnome.mutter overlay-key ""
+
+# disable raise on click
+gsettings set org.gnome.desktop.wm.preferences raise-on-click false
+
+# disable changing focus after mouse stops moving
+gsettings set org.gnome.mutter focus-change-on-pointer-rest false
+
+# night light
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 12.0
+gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 11.9
+gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 5000
+
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>F1', '<Super>Home']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>F2']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>F3']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>F4']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>F5']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>F6']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Super>F7']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Super>F8', '<Super>End']"
+
+# Alt Tab windows on current workspace only
+gsettings set org.gnome.shell.app-switcher current-workspace-only true
+
+# minimize on click / dash
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
+# show battery percentage
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+# natural scrolling
+# gsettings list-recursively org.gnome.desktop.peripherals.touchpad
+
+# gsettings reset-recursively org.gnome.desktop.peripherals.touchpad
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+gsettings set org.gnome.desktop.peripherals.touchpad two-finger-scrolling-enabled true
