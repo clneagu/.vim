@@ -1,0 +1,11 @@
+# misc install
+sudo apt-get install -y curl vim neovim
+
+# install ssh server
+sudo apt-get install -y openssh-server net-tools
+sudo systemctl enable ssh
+sudo ufw allow ssh
+sudo ufw status
+
+# Gnome Tweaks
+sudo apt install -y gnome-tweaks
